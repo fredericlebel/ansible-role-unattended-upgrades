@@ -76,7 +76,7 @@ wheels = [
 ]
 
 [[package]]
-name = "ansible-role-apt"
+name = "ansible-role-unattended-upgrades"
 version = "0.1.0"
 source = { virtual = "." }
 

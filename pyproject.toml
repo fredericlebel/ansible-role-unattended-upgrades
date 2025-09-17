@@ -1,5 +1,5 @@
 [project]
-name = "ansible-role-apt"
+name = "ansible-role-unattended-upgrades"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
