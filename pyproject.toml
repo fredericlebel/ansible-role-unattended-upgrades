@@ -1,0 +1,16 @@
+[project]
+name = "ansible-role-apt"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ansible>=12.0.0",
+    "ansible-lint>=25.9.0",
+    "molecule>=25.9.0",
+    "molecule-plugins[podman]>=25.8.12",
+    "yamllint>=1.37.1",
+]
