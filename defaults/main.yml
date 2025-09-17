@@ -1,0 +1,80 @@
+#SPDX-License-Identifier: MIT-0
+---
+# defaults file for ansible-role-apt
+
+# Allowed origins for automatic updates
+unattended_upgrades__allowed_origins:
+  - "${distro_id}:${distro_codename}"
+  - "${distro_id}:${distro_codename}-security"
+  - "${distro_id}ESMApps:${distro_codename}-apps-security"
+  - "${distro_id}ESM:${distro_codename}-infra-security"
+  # - "${distro_id}:${distro_codename}-updates"
+  # - "${distro_id}:${distro_codename}-proposed"
+  # - "${distro_id}:${distro_codename}-backports"
+
+# List of packages to exclude (Python regex)
+unattended_upgrades__package_blacklist: []
+
+# Automatically upgrade to development releases
+unattended_upgrades__devrelease: "auto"
+
+# Automatically fix interrupted dpkg operations
+unattended_upgrades__auto_fix_interrupted_dpkg: true
+
+# Apply updates in minimal steps (slower but can be interrupted)
+unattended_upgrades__minimal_steps: false
+
+# Install updates when shutting down
+unattended_upgrades__install_on_shutdown: false
+
+# Email address for update reports (empty = no email)
+unattended_upgrades__mail: ""
+
+# Email report level: always | only-on-error | on-change
+unattended_upgrades__mail_report: "on-change"
+
+# Remove unused kernel packages after upgrades
+unattended_upgrades__remove_unused_kernel_packages: true
+
+# Remove newly installed unused dependencies automatically
+unattended_upgrades__remove_new_unused_dependencies: true
+
+# Remove unused dependencies after upgrade
+unattended_upgrades__remove_unused_dependencies: false
+
+# Automatically reboot if required after upgrades
+unattended_upgrades__automatic_reboot: false
+
+# Reboot even when users are logged in
+unattended_upgrades__automatic_reboot_with_users: true
+
+# Time to perform the automatic reboot if enabled
+unattended_upgrades__automatic_reboot_time: "02:00"
+
+# Limit download speed in kB/s (empty = disabled)
+unattended_upgrades__acquire_http_dl_limit: ""
+
+# Enable logging to syslog
+unattended_upgrades__syslog_enable: false
+
+# Syslog facility to use
+unattended_upgrades__syslog_facility: "daemon"
+
+# Only run updates when on AC power
+unattended_upgrades__only_on_ac_power: true
+
+# Skip updates when on metered connections
+unattended_upgrades__skip_updates_on_metered_connections: true
+
+# Enable verbose logging
+unattended_upgrades__verbose: false
+
+# Enable debug logging
+unattended_upgrades__debug: false
+
+# Allow downgrades if Pin-Priority > 1000
+unattended_upgrades__allow_downgrade: false
+
+# Enable fallback for APT Mark if needed
+unattended_upgrades__allow_apt_mark_fallback: true
+

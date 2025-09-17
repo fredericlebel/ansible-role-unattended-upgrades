@@ -1,0 +1,40 @@
+// {{ ansible_managed }}
+
+Unattended-Upgrade::Allowed-Origins {
+{% for origin in unattended_upgrades__allowed_origins %}
+        "{{ origin }}";
+{% endfor %}
+};
+
+Unattended-Upgrade::Package-Blacklist {
+{% for pkg in unattended_upgrades__package_blacklist %}
+        "{{ pkg }}";
+{% endfor %}
+};
+
+Unattended-Upgrade::DevRelease "{{ unattended_upgrades__devrelease }}";
+Unattended-Upgrade::AutoFixInterruptedDpkg "{{ unattended_upgrades__auto_fix_interrupted_dpkg | lower }}";
+Unattended-Upgrade::MinimalSteps "{{ unattended_upgrades__minimal_steps | lower }}";
+Unattended-Upgrade::InstallOnShutdown "{{ unattended_upgrades__install_on_shutdown | lower }}";
+Unattended-Upgrade::Mail "{{ unattended_upgrades__mail }}";
+Unattended-Upgrade::MailReport "{{ unattended_upgrades__mail_report }}";
+Unattended-Upgrade::Remove-Unused-Kernel-Packages "{{ unattended_upgrades__remove_unused_kernel_packages | lower }}";
+Unattended-Upgrade::Remove-New-Unused-Dependencies "{{ unattended_upgrades__remove_new_unused_dependencies | lower }}";
+Unattended-Upgrade::Remove-Unused-Dependencies "{{ unattended_upgrades__remove_unused_dependencies | lower }}";
+Unattended-Upgrade::Automatic-Reboot "{{ unattended_upgrades__automatic_reboot | lower }}";
+Unattended-Upgrade::Automatic-Reboot-WithUsers "{{ unattended_upgrades__automatic_reboot_with_users | lower }}";
+Unattended-Upgrade::Automatic-Reboot-Time "{{ unattended_upgrades__automatic_reboot_time }}";
+
+{% if unattended_upgrades__acquire_http_dl_limit %}
+Acquire::http::Dl-Limit "{{ unattended_upgrades__acquire_http_dl_limit }}";
+{% endif %}
+
+Unattended-Upgrade::SyslogEnable "{{ unattended_upgrades__syslog_enable | lower }}";
+Unattended-Upgrade::SyslogFacility "{{ unattended_upgrades__syslog_facility }}";
+Unattended-Upgrade::OnlyOnACPower "{{ unattended_upgrades__only_on_ac_power | lower }}";
+Unattended-Upgrade::Skip-Updates-On-Metered-Connections "{{ unattended_upgrades__skip_updates_on_metered_connections | lower }}";
+Unattended-Upgrade::Verbose "{{ unattended_upgrades__verbose | lower }}";
+Unattended-Upgrade::Debug "{{ unattended_upgrades__debug | lower }}";
+Unattended-Upgrade::Allow-downgrade "{{ unattended_upgrades__allow_downgrade | lower }}";
+Unattended-Upgrade::Allow-APT-Mark-Fallback "{{ unattended_upgrades__allow_apt_mark_fallback | lower }}";
+
