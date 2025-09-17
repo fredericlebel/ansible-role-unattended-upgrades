@@ -1,16 +1,9 @@
 ---
 
-- name: Install unattended-upgrades and dependencies
+- name: Install unattended-upgrades
   ansible.builtin.apt:
     name:
       - unattended-upgrades
-      - apt-listchanges   # facultatif : notifications de changements
-    state: present
-    update_cache: true
-
-- name: Install unnattended-upgrade package
-  ansible.builtin.apt:
-    name: unattended-upgrades
     state: present
     update_cache: true
 
