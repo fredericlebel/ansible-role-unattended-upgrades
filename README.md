@@ -1,7 +1,7 @@
 Role Name
 =========
 
-frleb.ansible_role_apt – Install and configure automatic updates on Ubuntu using **unattended-upgrades**.
+fredericlebel.ansible_role_unattended-upgrades – Install and configure automatic updates on Ubuntu using **unattended-upgrades**.
 
 Requirements
 ------------
@@ -53,7 +53,7 @@ Example Playbook
 - hosts: all
   become: true
   roles:
-    - role: frleb.ansible_role_apt
+    - role: fredericlebel.ansible_role_unattended-upgrades
       vars:
         unattended_upgrades__automatic_reboot: true
         unattended_upgrades__mail: "admin@example.com"

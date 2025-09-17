@@ -1,7 +1,7 @@
 #SPDX-License-Identifier: MIT-0
 galaxy_info:
   role_name: unattended_upgrades
-  namespace: frleb
+  namespace: fredericlebel
   author: Frédéric Lebel
   description: your role description
   company: your company (optional)
